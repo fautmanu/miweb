@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Antonio');
+
+body {
+    font-family: 'Antonio', sans-serif;
+    font-size: 16px;
+    color: aliceblue;
+    background: rgb(12, 13, 24);
+    margin: 10px;
+}
+
+.faut {
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    height: 46px;
+    width: fit-content;
+    font-size: 30px;
+    font-weight: 700;
+    animation: updown .5s;
+    animation-delay: 1s;
+}
+
+@keyframes updown {
+    0% {
+        clip: rect(0px, 300px, 5px, 0px);
+        transform: translate(0px, 20x);
+   }
+    25% {
+        clip: rect(0px, 300px, 15px, 0px);
+        transform: translate(0px, 20x);
+   }
+    50% {
+        clip: rect(0px, 300px, 25px, 0px);
+        transform: translate(0px, 20x);
+   }
+    100% {
+        clip: rect(0px, 300px, 30px, 0px);
+        transform: translate(0px, 20x);
+   }
+}
+
