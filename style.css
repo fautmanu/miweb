@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Antonio', sans-serif;
-    font-size: 16px;
+    font-size: 25px;
     font-weight: 100;
     color: aliceblue;
     background: rgb(12, 13, 24);
@@ -13,23 +13,27 @@ body {
     position: fixed;
     top: 15px;
     left: 20px;
-    height: 46px;
+    height: 100px;
     width: fit-content;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: 700;
-    animation: glitch 2.5s;
-
-    text-shadow: none;
+    /*background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 100%);*/
+    background: url(./assets/pexels-pixabay-459799.jpg) 0 0 no-repeat;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    /*animation: glitch 5s infinite;*/
+    animation: backmove 60s infinite alternate;
 }
 
 .faut:hover{
-    animation: glitch 2.5s infinite alternate-reverse;
+    -webkit-text-fill-color: aliceblue;
+    animation: ease;
     cursor: default;
 }
 
 .menu {
     position: fixed;
-    top: 32px;
+    top: 50px;
     right: 20px;
     align-items: flex-start;
     display: flexbox;
@@ -76,39 +80,242 @@ nav a:hover {
     cursor: pointer;
 }
 
+.container {
+    position: fixed;
+    top: 100px;
+    left: 20px;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.container h2 {
+    margin: 0;
+    text-align: center;
+    background-color: lightseagreen;
+    height: 80px;
+    width: 200px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.card{
+    background-color: aliceblue;
+    height: 200px;
+    width: 200px;
+    background-size: 100px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
 /*animations*/
 
 @keyframes glitch {
-    0% {
-        text-shadow: 0.1em  0.1em 0 rgb(189, 148, 241);
-        opacity: .4;
+    1% {
+        background: linear-gradient(to right bottom, #30CFD0 0%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    2% {
+        background: linear-gradient(to right bottom, rgb(189, 148, 241) 0%, #30CFD0 20%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    3% {
+        background: linear-gradient(to right bottom, rgb(189, 148, 241) 0%, #30CFD0 40%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    4% {
+        background: linear-gradient(to right bottom, rgb(189, 148, 241) 0%, #30CFD0 60%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    5% {
+        background: linear-gradient(to right bottom, rgb(189, 148, 241) 0%, #30CFD0 80%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    6% {
+        background: linear-gradient(to right bottom, rgb(189, 148, 241) 0%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    10% {
+        background: linear-gradient(to right, rgb(189, 148, 241) 80%, #30CFD0 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
     }
     12% {
-        text-shadow: 0.18em  0.18em 0 rgb(144, 86, 219);
-        opacity: .5;
+        background: linear-gradient(to right, rgb(189, 148, 241) 60%, #30CFD0 80%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
     }
-    25% {
-        text-shadow: 0.25em  0.25em 0 rgb(53, 15, 102);
-        opacity: .6;
+    14% {
+        background: linear-gradient(to right, rgb(189, 148, 241) 40%, #30CFD0 60%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
     }
-    37% {
-        text-shadow: -0.1em  -0.1em 0 rgb(189, 148, 241);
-        opacity: .6;
+    16% {
+        background: linear-gradient(to right, rgb(189, 148, 241) 20%, #30CFD0 40%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
     }
-    50% {
-        text-shadow: -0.18em  -0.18em 0 rgb(144, 86, 219);
-        opacity: .7;
+    18% {
+        background: linear-gradient(to right, #30CFD0 20%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
     }
-    75% {
-        text-shadow: -0.25em  -0.25em 0 rgba(53, 15, 102, 0.75);
-        opacity: .8;
+    20% {
+        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
     }
-    87% {
-        text-shadow: -0.25em  -0.25em 0 rgba(53, 15, 102, 0.5);
-        opacity: .9;
+    22% {
+        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 40%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
     }
-    100% {
-        text-shadow: -0.25em  -0.25em 0 rgba(53, 15, 102, 0.15);
-        opacity: 1;
+    24% {
+        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 20%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    26% {
+        background: linear-gradient(to right, rgb(189, 148, 241) 0%,rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    32% {
+        background: linear-gradient(10deg, #30CFD0 0%, rgb(189, 148, 241) 20%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    34% {
+        background: linear-gradient(10deg, #30CFD0 0%, rgb(189, 148, 241) 60%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    36% {
+        background: linear-gradient(10deg, #30CFD0 60%, rgb(189, 148, 241) 80%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    38% {
+        background: linear-gradient(10deg, #30CFD0 80%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    42% {
+        background: linear-gradient(10deg, rgb(189, 148, 241) 0%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    90%{
+        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 10%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    92%{
+        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 20%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    94%{
+        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 30%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    96%{
+        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 40%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    98%{
+        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 100%);
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+}
+
+@keyframes backmove {
+    0%{
+        background: url(./assets/pexels-pixabay-459799.jpg);
+        background-position: 0% 0%;
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    10%{
+        background: url(./assets/pexels-pixabay-459799.jpg);
+        background-position: 10% 10%;
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    20%{
+        background: url(./assets/pexels-pixabay-459799.jpg);
+        background-position: 20% 80%;
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    30%{
+        background: url(./assets/pexels-pixabay-459799.jpg);
+        background-position: 50% 30%;
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    40%{
+        background: url(./assets/pexels-pixabay-459799.jpg);
+        background-position: 80% 15%;
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    50%{
+        background: url(./assets/pexels-pixabay-459799.jpg);
+        background-position: 20% 90%;
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    60%{
+        background: url(./assets/pexels-pixabay-459799.jpg);
+        background-position: 80% 10%;
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    70%{
+        background: url(./assets/pexels-pixabay-459799.jpg);
+        background-position: 60% 10%;
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    80%{
+        background: url(./assets/pexels-pixabay-459799.jpg);
+        background-position: 40% 20%;
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    90%{
+        background: url(./assets/pexels-pixabay-459799.jpg);
+        background-position: 20% 50%;
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
+    }
+    100%{
+        background: url(./assets/pexels-pixabay-459799.jpg);
+        background-position: 0% 10%;
+        background-repeat: no-repeat;
+        -webkit-background-clip: text;
+	    -webkit-text-fill-color: transparent;
     }
 }
