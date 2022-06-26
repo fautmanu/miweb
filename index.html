@@ -7,32 +7,55 @@
 </head>
 
 <body>
-    <div class="faut">fautmanu</div>
     <nav>
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Services</a>
         <a href="#">Contact</a>
     </nav>
-    <div class="container">
-        <div class="card">
-            <image src="./assets/Three.js_Icon.svg"></image>
-            <h2>Three js</h2>
+    <div id="vanta">
+        <div class="presentation">
+            <span class="pre_span1">I am</span>
+            <span class="faut">fautmanu</span>
+            <span class="pre_span2">front-end developer</span>
         </div>
-        <div class="card">
-            <image src="./assets/Babylon_logo_v4.svg"></image>
-            <h2>Babylon js</h2>
+    </div>
+    <div class="body2">
+        <div class="container">
+            <div class="card">
+                <image src="./assets/Three.js_Icon.svg"></image>
+                <h2>Three js</h2>
+            </div>
+            <div class="card">
+                <image src="./assets/Babylon_logo_v4.svg"></image>
+                <h2>Babylon js</h2>
+            </div>
         </div>
     </div>
     <div class="social">
-        <button class="github" onclick="location.href='https://github.com/fautmanu/';"></button>
+        <button class="github" onclick="location.href='github.com/fautmanu/';"></button>
         <button class="github" onclick="location.href='#'">pepito</button>
         <button class="github" onclick="location.href='#'">juanito</button>
     </div>
-    <script src="three/three.js"></script>
-		<script>
-			// Our Javascript will go here.
-		</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js" ></script>
+    <script>
+        VANTA.TOPOLOGY({
+            el: "#vanta",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            /*color: 0x2703f7,
+            backgroundColor: 0x414141*/
+            color: 0x818181,
+            backgroundColor: 0xffffff
+            })
+    </script>
 </body>
 
 </html>

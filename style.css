@@ -1,38 +1,79 @@
 @import url('https://fonts.googleapis.com/css?family=Antonio');
 
+html{
+    height: fit-content;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Antonio', sans-serif;
     font-size: 25px;
     font-weight: 100;
-    color: aliceblue;
-    background: rgb(12, 13, 24);
-    margin: 10px;
+    color: black;
+    margin: 0px;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #5c5c5c #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    width: 16px;
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #5c5c5c;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}
+
+#vanta{
+    z-index: -1;
+    width: 100%;
+    height: 1200px;
 }
 
 .faut {
-    position: fixed;
-    top: 15px;
-    left: 20px;
-    height: 100px;
+    position: absolute;
+    left: 150px;
+    height: fit-content;
     width: fit-content;
-    font-size: 50px;
+    font-size: 80px;
     font-weight: 700;
     /*background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 100%);*/
-    background: url(./assets/pexels-pixabay-459799.jpg) 0 0 no-repeat;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+    background: url(./assets/pexels-pixabay-459799.jpg) 20% 20% no-repeat;
     /*animation: glitch 5s infinite;*/
     animation: backmove 60s infinite alternate;
+    z-index: 3;
+}
+
+.faut.text{
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .faut:hover{
-    -webkit-text-fill-color: aliceblue;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
     animation: ease;
     cursor: default;
 }
 
 .menu {
-    position: fixed;
+    position: relative;
     top: 50px;
     right: 20px;
     align-items: flex-start;
@@ -48,23 +89,44 @@ nav {
     display: flex;
     flex-direction: row;
     animation: opacity 2s;
+    z-index: 1;
 }
 
 nav a {
     padding: 18px;
     text-transform:uppercase;
-    color: aliceblue;
+    color: black;
     text-decoration: none;
 }
 
 nav a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 1);
     background: rgba(255, 255, 255, 0.1);
-    color: rgb(189, 148, 241);
+    color: rgb(60,105,255);
+}
+
+.presentation{
+    position: fixed;
+    top: 200px;
+    left: 10%;
+    font-size: 80px;
+    color: black;
+    height: fit-content;
+}
+
+.pre_span1{
+    animation: myAnim 3s ease 0s 1 normal forwards;
+}
+
+.pre_span2{
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    animation: myAnim 3s ease 0s 1 normal forwards;
+    animation-delay: 2s;
 }
 
 .social {
-    position: fixed;
     bottom: 20px;
     display: flex;
     flex-direction: column;
@@ -80,8 +142,23 @@ nav a:hover {
     cursor: pointer;
 }
 
+.body2{
+    position: relative;
+    top: -300px;
+    min-height: 800px;
+    width: 100%;    
+    background-color: white;
+    border-top-left-radius: 10%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(112, 112, 112, 0.2);
+    -webkit-transform: skewY(8deg);
+    transform: skewY(8deg);
+    z-index: 0;
+}
+
 .container {
-    position: fixed;
+    position: relative;
     top: 100px;
     left: 20px;
     height: 300px;
@@ -94,8 +171,9 @@ nav a:hover {
 .container h2 {
     margin: 0;
     text-align: center;
-    background-color: lightseagreen;
-    height: 80px;
+    text-shadow: 2px 2px 5px black;
+    background-color: rgb(89, 58, 202);
+    height: 60px;
     width: 200px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -111,135 +189,6 @@ nav a:hover {
 }
 
 /*animations*/
-
-@keyframes glitch {
-    1% {
-        background: linear-gradient(to right bottom, #30CFD0 0%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    2% {
-        background: linear-gradient(to right bottom, rgb(189, 148, 241) 0%, #30CFD0 20%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    3% {
-        background: linear-gradient(to right bottom, rgb(189, 148, 241) 0%, #30CFD0 40%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    4% {
-        background: linear-gradient(to right bottom, rgb(189, 148, 241) 0%, #30CFD0 60%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    5% {
-        background: linear-gradient(to right bottom, rgb(189, 148, 241) 0%, #30CFD0 80%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    6% {
-        background: linear-gradient(to right bottom, rgb(189, 148, 241) 0%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    10% {
-        background: linear-gradient(to right, rgb(189, 148, 241) 80%, #30CFD0 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    12% {
-        background: linear-gradient(to right, rgb(189, 148, 241) 60%, #30CFD0 80%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    14% {
-        background: linear-gradient(to right, rgb(189, 148, 241) 40%, #30CFD0 60%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    16% {
-        background: linear-gradient(to right, rgb(189, 148, 241) 20%, #30CFD0 40%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    18% {
-        background: linear-gradient(to right, #30CFD0 20%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    20% {
-        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    22% {
-        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 40%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    24% {
-        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 20%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    26% {
-        background: linear-gradient(to right, rgb(189, 148, 241) 0%,rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    32% {
-        background: linear-gradient(10deg, #30CFD0 0%, rgb(189, 148, 241) 20%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    34% {
-        background: linear-gradient(10deg, #30CFD0 0%, rgb(189, 148, 241) 60%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    36% {
-        background: linear-gradient(10deg, #30CFD0 60%, rgb(189, 148, 241) 80%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    38% {
-        background: linear-gradient(10deg, #30CFD0 80%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    42% {
-        background: linear-gradient(10deg, rgb(189, 148, 241) 0%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    90%{
-        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 10%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    92%{
-        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 20%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    94%{
-        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 30%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    96%{
-        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 40%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-    98%{
-        background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 100%);
-        -webkit-background-clip: text;
-	    -webkit-text-fill-color: transparent;
-    }
-}
-
 @keyframes backmove {
     0%{
         background: url(./assets/pexels-pixabay-459799.jpg);
@@ -318,4 +267,14 @@ nav a:hover {
         -webkit-background-clip: text;
 	    -webkit-text-fill-color: transparent;
     }
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
 }
