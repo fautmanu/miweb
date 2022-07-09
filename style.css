@@ -41,19 +41,19 @@ body {
     z-index: -1;
     width: 100%;
     height: 1200px;
+    display: flex;
+    flex-direction: row;
 }
 
 .faut {
-    position: absolute;
-    left: 150px;
     height: fit-content;
     width: fit-content;
-    font-size: 80px;
+    font-size: 100px;
     font-weight: 700;
     /*background: linear-gradient(to right, #30CFD0 0%, rgb(189, 148, 241) 100%);*/
-    background: url(./assets/pexels-pixabay-459799.jpg) 20% 20% no-repeat;
+    background: url(./assets/pexels-pixabay-459799.jpg) 0% 0% no-repeat;
     /*animation: glitch 5s infinite;*/
-    animation: backmove 60s infinite alternate;
+    animation: backmove 50s infinite alternate;
     z-index: 3;
 }
 
@@ -76,18 +76,16 @@ body {
     position: relative;
     top: 50px;
     right: 20px;
-    align-items: flex-start;
-    display: flexbox;
-    flex-direction: column;
 }
 
 nav {
     position: fixed;
-    top: 16px;
-    right: 20px;
-    min-width: 360px;
+    width: 100%;
+    background: transparent;
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     animation: opacity 2s;
     z-index: 1;
 }
@@ -102,16 +100,17 @@ nav a {
 nav a:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 1);
     background: rgba(255, 255, 255, 0.1);
-    color: rgb(60,105,255);
+    color: black;
 }
 
 .presentation{
-    position: fixed;
+    position: absolute;
     top: 200px;
-    left: 10%;
+    left: 5%;
     font-size: 80px;
     color: black;
     height: fit-content;
+    display: flex;
 }
 
 .pre_span1{
@@ -144,7 +143,7 @@ nav a:hover {
 
 .body2{
     position: relative;
-    top: -300px;
+    top: -500px;
     min-height: 800px;
     width: 100%;    
     background-color: white;
@@ -179,13 +178,48 @@ nav a:hover {
     border-bottom-right-radius: 10px;
 }
 
+.capabilities {
+    position: absolute;
+    top: 500px;
+    width: 100%;
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 50px 50px;
+}
+
 .card{
-    background-color: aliceblue;
+    background: transparent;
     height: 200px;
     width: 200px;
-    background-size: 100px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    min-width: 200px;
+    border-radius: 10%;
+    border-style: solid;
+    border-width: 16px;
+    border-color: black;
+    color: whitesmoke;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    z-index: 1;
+}
+
+.card canvas{
+    position: relative;
+    top: -48px;
+    z-index: 2;
+}
+
+.card span{
+    position: relative;
+    top: 70px;
+    z-index: 3;
+}
+
+.card:hover{
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25), 0 0 48px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
 }
 
 /*animations*/
