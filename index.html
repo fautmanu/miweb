@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <nav>
+    <nav class="navbar">
         <a href="#">Home</a>
         <a href="#">About</a>
         <a href="#">Services</a>
@@ -17,22 +17,22 @@
     <div id="vanta">
     </div>
     <div class="presentation">
-        <span class="pre_span1">I am</span>
+        <span class="pre_span1">I'm</span>
         <span class="faut">fautmanu</span>
         <span class="pre_span2">front-end developer</span>
     </div>
     <div class="capabilities">
-        <div id="three" class="card"><span>Three js</span></div>
-        <div id="three" class="card"><span>Three js</span></div>
-        <div id="three" class="card"><span>Three js</span></div>
-        <div id="three" class="card"><span>Three js</span></div>
-        <div id="three" class="card"><span>Three js</span></div>
+        <div id="three1" class="card"><span>Three js</span></div>
+        <div id="three2" class="card"><span>Babylon js</span></div>
+        <div id="three3" class="card"><span>Javascript</span></div>
+        <div id="three4" class="card"><span>CSS</span></div>
     </div>
     <div class="social">
-        <button class="github" onclick="location.href='github.com/fautmanu/';"></button>
+        <button class="github" onclick="location.href='https://github.com/fautmanu'"></button>
         <button class="github" onclick="location.href='#'">pepito</button>
         <button class="github" onclick="location.href='#'">juanito</button>
     </div>
+    <script type="module" src="./js/main.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js" ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" ></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js" ></script>
@@ -55,20 +55,20 @@
             let THREE = window.THREE;
             //import * as THREE from window.THREE;
 
-            let camera, scene, renderer, container, material;
+            let camera, scene, renderer, container1, container2, container3, container4, container5, material;
 			let mouseX = 0, mouseY = 0;
-
-			let containerHalfX = 100;
-			let containerHalfY = 100;
 
 			init();
 			animate();
 
 			function init() {
 
-                container = document.getElementById( 'three' );
+                container1 = document.getElementById( 'three1' );
+                container2 = document.getElementById( 'three2' );
+                container3 = document.getElementById( 'three3' );
+                container4 = document.getElementById( 'three4' );
 				camera = new THREE.PerspectiveCamera( 55, window.innerWidth / window.innerHeight, 2, 2000 );
-				camera.position.z = 1000;
+				camera.position.z = 1200;
 
 				scene = new THREE.Scene();
 				scene.fog = new THREE.FogExp2( 0x000000, 0.001 );
@@ -91,22 +91,40 @@
 				geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( vertices, 3 ) );
 
 				material = new THREE.PointsMaterial( { size: 35, sizeAttenuation: true, map: sprite, alphaTest: 0.5, transparent: true } );
-				material.color.setHSL( 1.0, 0.3, 0.7 );
+				material.color = new THREE.Color('rgb(85,60,150)');
 
 				const particles = new THREE.Points( geometry, material );
 				scene.add( particles );
 
 				//
 
-				renderer = new THREE.WebGLRenderer();
-				renderer.setSize( 200, 200 );
-                container.appendChild( renderer.domElement );
+				renderer1 = new THREE.WebGLRenderer();
+				renderer1.setSize( 200, 200 );
+                renderer1.setPixelRatio( window.devicePixelRatio );
+                renderer2 = new THREE.WebGLRenderer();
+				renderer2.setSize( 200, 200 );
+                renderer2.setPixelRatio( window.devicePixelRatio );
+                renderer3 = new THREE.WebGLRenderer();
+				renderer3.setSize( 200, 200 );
+                renderer3.setPixelRatio( window.devicePixelRatio );
+                renderer4 = new THREE.WebGLRenderer();
+				renderer4.setSize( 200, 200 );
+                renderer4.setPixelRatio( window.devicePixelRatio );
+                container1.appendChild( renderer1.domElement );
+                container2.appendChild( renderer2.domElement );
+                container3.appendChild( renderer3.domElement );
+                container4.appendChild( renderer4.domElement );
 
 				//
 
-				container.style.touchAction = 'none';
-				container.addEventListener( 'pointermove', onPointerMove );
-
+				container1.style.touchAction = 'none';
+				container1.addEventListener( 'pointermove', onPointerMove );
+                container2.style.touchAction = 'none';
+				container2.addEventListener( 'pointermove', onPointerMove );
+                container3.style.touchAction = 'none';
+				container3.addEventListener( 'pointermove', onPointerMove );
+                container4.style.touchAction = 'none';
+				container4.addEventListener( 'pointermove', onPointerMove );
 				//
 
 			}
@@ -115,8 +133,8 @@
 
 				if ( event.isPrimary === false ) return;
 
-				mouseX = event.clientX - containerHalfX;
-				mouseY = event.clientY - containerHalfY;
+				mouseX = event.clientX * .5;
+				mouseY = event.clientY * .5;
 
 			}
 
@@ -138,10 +156,13 @@
 
 				camera.lookAt( scene.position );
 
-				const h = ( 360 * ( 1.0 + time ) % 360 ) / 360;
-				material.color.setHSL( h, 0.5, 0.5 );
+				/*const h = ( 360 * ( 1.0 + time ) % 360 ) / 360;
+				material.color.setHSL( h, 0.5, 0.5 );*/
 
-				renderer.render( scene, camera );
+				renderer1.render( scene, camera );
+                renderer2.render( scene, camera );
+                renderer3.render( scene, camera );
+                renderer4.render( scene, camera );
 
 			}
     </script>
